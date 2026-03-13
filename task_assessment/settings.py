@@ -23,10 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--ukq=nqy0hu+b2l8w#&&-59%^_ljgbpso#nb&ze8x961e5psvd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['team-task-backend.onrender.com']
+ALLOWED_HOSTS = [
+    "yourusername.pythonanywhere.com",
+    "localhost",
+    "127.0.0.1",
+    '*'
+]
 
 
 # Application definition
@@ -111,14 +116,12 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 MIDDLEWARE = [
-    
-
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # add this
-
-    # add it for cors
-    "corsheaders.middleware.CorsMiddleware",
-    
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    "corsheaders.middleware.CorsMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -207,5 +210,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-SECRET_KEY = "django-insecure-4p9=5v8@^=c9s(5!_x1y$8=2v-3&1k9n5#2h!@x3y^z"
