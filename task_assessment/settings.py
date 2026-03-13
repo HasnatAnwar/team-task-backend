@@ -207,3 +207,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+SECRET_KEY = "django-insecure-4p9=5v8@^=c9s(5!_x1y$8=2v-3&1k9n5#2h!@x3y^z"
